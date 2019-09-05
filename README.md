@@ -43,12 +43,11 @@ The ‘Database’ tab contains a table showing our entire movie collection, sor
   
   3.    Data presentation:
  
+   We created the graphs using a software called ‘Tableau’, which was initially pretty difficult to master. Tableau received our CSV as input, and automatically categorized our columns into dimension and measures. Our graphs were created by crossing a dimension with measure, or multiple measures.
 
-    We created the graphs using a software called ‘Tableau’, which was initially pretty difficult to master. Tableau received our CSV as input, and automatically categorized our columns into dimension and measures. Our graphs were created by crossing a dimension with measure, or multiple measures.
+   We had a problem when trying to present a graph showing the most common genre. Each movie doesn’t belong to just one genre, but mostly 2 or 3 genres. First, we had to separate the genre column, which was formatted in the following way: “genre1, genre2, genre3”, into 3 columns.
 
-    We had a problem when trying to present a graph showing the most common genre. Each movie doesn’t belong to just one genre, but mostly 2 or 3 genres. First, we had to separate the genre column, which was formatted in the following way: “genre1, genre2, genre3”, into 3 columns.
-
-    Then, we had to find a way to count the total occurrences of a genre which was a bit problematic. Eventually, we had to create a measure field for every genre which was based on the following calculation:    
+   Then, we had to find a way to count the total occurrences of a genre which was a bit problematic. Eventually, we had to create a measure field for every genre which was based on the following calculation:    
 ```
     COUNT( IF CONTAINS([Genre1],<target_genre>) then 1 END)+
 
@@ -57,5 +56,5 @@ The ‘Database’ tab contains a table showing our entire movie collection, sor
     COUNT( IF CONTAINS([Genre3],<target_genre>) then 1 END)
 ```
 
-    The map was created using Google Maps. We created CSV containing only the title and country columns. Then, we created a map within Google Maps, and imported the csv to receive the map showing all movie locations. Then, we added the embedded HTML to our website.
-        Using string manipulations, we were able to receive the total amount of wins and nominations for each movies, saved as 2 different columns in the CSV.
+   The map was created using Google Maps. We created CSV containing only the title and country columns. Then, we created a map within Google Maps, and imported the csv to receive the map showing all movie locations. Then, we added the embedded HTML to our website.
+    Using string manipulations, we were able to receive the total amount of wins and nominations for each movies, saved as 2 different columns in the CSV.
